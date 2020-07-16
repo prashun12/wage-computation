@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 var=`echo $(( Random % 2))`
 if [ $var -eq 1 ]
