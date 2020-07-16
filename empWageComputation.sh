@@ -1,9 +1,13 @@
 #!/bin/bash -x
+isPresent=1
+randomcheck=$((RANDOM%2))
 
-var=`echo $(( Random % 2))`
-if [ $var -eq 1 ]
+if [ $isPresent -eq $randomcheck ]
 then
-      echo 'employ is present'
+     empRatePerHr=20
+     empHrs=8
+     salary=$(( $empRatePerHr*$empHrs ))
 else
-      echo 'employ is not present'
-fi 
+     salary=0
+fi
+
