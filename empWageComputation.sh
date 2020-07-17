@@ -1,9 +1,19 @@
 #!/bin/bash -x
+isPartTime=1
+isFullTime=2
+empRatePerHr=20
+randomcheck=$((RANDOM%3))
 
-var=`echo $(( Random % 2))`
-if [ $var -eq 1 ]
+
+if [ $isFullTime -eq $randomcheck ]
 then
-      echo 'employ is present'
+      empHrs=8
+
+elif [ $isPartTime -eq $randomcheck ]
+then
+      empHrs=4
 else
-      echo 'employ is not present'
-fi 
+      empHrs=0
+fi
+
+salary=$(($empHrs*$empRatePerHr))
